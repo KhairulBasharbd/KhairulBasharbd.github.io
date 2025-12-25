@@ -1,0 +1,271 @@
+/* Custom CSS for Portfolio */
+
+/* Custom Font Classes */
+.font-fira-code {
+    font-family: 'Fira Code', monospace;
+}
+
+.font-sans {
+    font-family: 'Inter', sans-serif;
+}
+
+/* Navigation Styles */
+.nav-link {
+    @apply text-slate-300 hover:text-emerald-400 transition-colors duration-300 font-medium;
+}
+
+.mobile-nav-link {
+    @apply text-slate-300 hover:text-emerald-400 py-2 border-b border-slate-800 transition-colors;
+}
+
+/* Button Styles */
+.btn-primary {
+    @apply inline-flex items-center px-5 py-3 bg-emerald-600 hover:bg-emerald-700 text-white font-semibold rounded-lg transition-all duration-300 hover:scale-105 shadow-lg shadow-emerald-900/30;
+}
+
+.btn-secondary {
+    @apply inline-flex items-center px-5 py-3 bg-slate-800 hover:bg-slate-700 text-white font-semibold rounded-lg transition-all duration-300 hover:scale-105 border border-slate-700;
+}
+
+.btn-outline {
+    @apply inline-flex items-center px-5 py-3 border border-emerald-600 text-emerald-400 hover:bg-emerald-600/10 font-semibold rounded-lg transition-all duration-300;
+}
+
+/* Social Icons */
+.social-icon {
+    @apply w-12 h-12 rounded-full bg-slate-800 hover:bg-emerald-900/30 border border-slate-700 flex items-center justify-center text-xl text-slate-300 hover:text-emerald-400 transition-all duration-300 hover:scale-110;
+}
+
+/* Section Headings */
+.section-heading {
+    @apply text-3xl md:text-4xl font-bold font-fira-code;
+}
+
+.section-underline {
+    @apply w-20 h-1 bg-gradient-to-r from-emerald-500 to-emerald-700 rounded-full mx-auto mt-4;
+}
+
+/* Skill Cards */
+.skill-card {
+    @apply bg-slate-800/50 rounded-xl p-6 border border-slate-700 hover:border-emerald-500/50 transition-all duration-300 hover:transform hover:-translate-y-1;
+}
+
+.skill-icon {
+    @apply w-14 h-14 rounded-xl flex items-center justify-center text-2xl mb-4;
+}
+
+.skill-category {
+    @apply text-xl font-bold mb-4 font-fira-code;
+}
+
+.skill-item {
+    @apply text-slate-300 hover:text-emerald-400 transition-colors cursor-default pl-2 border-l-2 border-slate-700 hover:border-emerald-500;
+}
+
+/* Project Cards */
+.project-card {
+    @apply bg-slate-800/30 rounded-xl p-6 border border-slate-700 hover:border-emerald-500/50 transition-all duration-300 hover:transform hover:-translate-y-2 relative overflow-hidden;
+}
+
+.project-card::before {
+    content: '';
+    @apply absolute inset-0 bg-gradient-to-br from-emerald-900/0 to-emerald-900/0 group-hover:from-emerald-900/10 group-hover:to-emerald-900/5 transition-all duration-500;
+}
+
+.project-badge {
+    @apply inline-block px-3 py-1 text-xs font-semibold bg-emerald-900/30 text-emerald-400 rounded-full border border-emerald-800 mb-3;
+}
+
+.project-title {
+    @apply text-2xl font-bold mb-3 font-fira-code;
+}
+
+.project-description {
+    @apply text-slate-400 mb-6;
+}
+
+.project-tech {
+    @apply flex flex-wrap gap-2;
+}
+
+.project-tech span {
+    @apply px-3 py-1 text-xs bg-slate-900/70 text-slate-300 rounded-full border border-slate-700;
+}
+
+.project-link {
+    @apply text-emerald-400 hover:text-emerald-300 font-medium flex items-center transition-colors;
+}
+
+/* Experience Timeline */
+.experience-item {
+    @apply relative pb-10 pl-10 border-l border-slate-700;
+}
+
+.experience-item:last-child {
+    @apply pb-0;
+}
+
+.experience-item::before {
+    content: '';
+    @apply absolute left-[-8px] top-0 w-4 h-4 rounded-full bg-emerald-600 border-4 border-slate-900;
+}
+
+.experience-date {
+    @apply absolute left-[-120px] top-0 text-emerald-400 font-fira-code text-sm font-medium;
+}
+
+@media (max-width: 768px) {
+    .experience-date {
+        @apply static mb-2 text-emerald-400;
+    }
+    .experience-item {
+        @apply pl-6;
+    }
+}
+
+.experience-title {
+    @apply text-xl font-bold mb-1;
+}
+
+.experience-company {
+    @apply text-emerald-400 font-medium mb-3;
+}
+
+.experience-description {
+    @apply text-slate-400 space-y-2;
+}
+
+.experience-description li {
+    @apply list-disc ml-5;
+}
+
+/* Education Cards */
+.education-card {
+    @apply bg-slate-800/30 rounded-xl p-6 border border-slate-700 hover:border-emerald-500/30 transition-all duration-300;
+}
+
+.education-icon {
+    @apply w-12 h-12 rounded-lg bg-emerald-900/30 border border-emerald-800 flex items-center justify-center text-xl text-emerald-400 mb-4;
+}
+
+.education-degree {
+    @apply text-xl font-bold mb-1 font-fira-code;
+}
+
+.education-institution {
+    @apply text-emerald-400 font-medium mb-1;
+}
+
+.education-duration {
+    @apply text-sm text-slate-500 mb-3;
+}
+
+.education-details {
+    @apply text-slate-400 mb-4;
+}
+
+.education-highlights {
+    @apply flex flex-wrap gap-2;
+}
+
+.education-highlights span {
+    @apply px-3 py-1 text-xs bg-slate-900/70 text-slate-300 rounded-full border border-slate-700;
+}
+
+/* Achievement Cards */
+.achievement-card {
+    @apply bg-slate-800/30 rounded-xl p-6 border border-slate-700 text-center hover:border-emerald-500/30 transition-all duration-300;
+}
+
+.achievement-icon {
+    @apply w-16 h-16 rounded-full bg-slate-800 border border-slate-700 flex items-center justify-center text-2xl text-emerald-400 mx-auto mb-4;
+}
+
+.achievement-title {
+    @apply text-xl font-bold mb-3;
+}
+
+.achievement-description {
+    @apply text-slate-400 text-sm;
+}
+
+/* Article Cards */
+.article-card {
+    @apply bg-slate-800/30 rounded-lg border border-slate-700 hover:border-emerald-500/30 transition-all duration-300 hover:transform hover:-translate-y-1 overflow-hidden;
+}
+
+.article-tag {
+    @apply px-3 py-1 text-xs font-semibold bg-slate-900/70 text-emerald-400 rounded-full;
+}
+
+.article-title {
+    @apply text-xl font-bold mb-3 font-fira-code;
+}
+
+.article-excerpt {
+    @apply text-slate-400 text-sm mb-4;
+}
+
+.article-link {
+    @apply text-emerald-400 hover:text-emerald-300 font-medium flex items-center transition-colors;
+}
+
+/* Contact Form */
+.contact-icon {
+    @apply w-10 h-10 rounded-lg bg-slate-800 border border-slate-700 flex items-center justify-center text-emerald-400 mr-4;
+}
+
+.contact-link {
+    @apply text-slate-300 hover:text-emerald-400 transition-colors;
+}
+
+.form-label {
+    @apply block text-slate-300 font-medium mb-2;
+}
+
+.form-input {
+    @apply w-full px-4 py-3 bg-slate-800 border border-slate-700 rounded-lg text-white placeholder-slate-500 focus:outline-none focus:ring-2 focus:ring-emerald-500 focus:border-emerald-500 transition-all;
+}
+
+/* Footer */
+.footer-link {
+    @apply text-slate-400 hover:text-emerald-400 transition-colors;
+}
+
+.back-to-top {
+    @apply w-10 h-10 rounded-full bg-slate-800 border border-slate-700 flex items-center justify-center text-slate-300 hover:text-emerald-400 hover:border-emerald-500 transition-all duration-300;
+}
+
+/* Animations */
+@keyframes fadeInUp {
+    from {
+        opacity: 0;
+        transform: translateY(20px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+.fade-in-up {
+    animation: fadeInUp 0.6s ease-out forwards;
+}
+
+/* Scrollbar Styling */
+::-webkit-scrollbar {
+    width: 10px;
+}
+
+::-webkit-scrollbar-track {
+    background: #0f172a;
+}
+
+::-webkit-scrollbar-thumb {
+    background: #334155;
+    border-radius: 5px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+    background: #475569;
+}

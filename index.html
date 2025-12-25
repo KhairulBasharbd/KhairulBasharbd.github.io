@@ -1,0 +1,1093 @@
+<!DOCTYPE html>
+<html lang="en" class="scroll-smooth">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Java Backend Engineer | Portfolio</title>
+    <meta name="description"
+        content="Junior Java Backend Engineer specializing in Spring Boot, REST APIs, and scalable systems">
+
+    <!-- Tailwind CSS CDN -->
+    <script src="https://cdn.tailwindcss.com"></script>
+
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Fira+Code:wght@300;400;500;600&family=Inter:wght@300;400;500;600;700&display=swap"
+        rel="stylesheet">
+
+    <!-- Custom CSS -->
+    <link rel="stylesheet" href="css/custom.css">
+
+    <!-- Favicon -->
+    <link rel="icon" type="image/svg+xml" href="assets/icons/code.svg">
+
+    <!-- Font Awesome for icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+</head>
+
+<body class="bg-slate-900 text-slate-100 font-sans antialiased">
+    <!-- Navigation -->
+    <nav class="fixed w-full bg-slate-900/95 backdrop-blur-sm z-50 border-b border-slate-800">
+        <div class="container mx-auto px-4 py-3">
+            <div class="flex justify-between items-center">
+                <!-- Logo -->
+                <a href="#hero" class="flex items-center space-x-2 group">
+                    <div class="w-8 h-8 bg-emerald-500 rounded-lg flex items-center justify-center">
+                        <i class="fas fa-code text-sm"></i>
+                    </div>
+                    <span
+                        class="font-fira-code font-semibold text-lg group-hover:text-emerald-400 transition-colors">Khairul
+                        Basar</span>
+                </a>
+
+                <!-- Desktop Menu -->
+                <div class="hidden md:flex items-center space-x-8">
+                    <a href="#about" class="nav-link">About</a>
+                    <a href="#skills" class="nav-link">Skills</a>
+                    <a href="#projects" class="nav-link">Projects</a>
+                    <a href="#experience" class="nav-link">Experience</a>
+                    <a href="#contact" class="btn-primary">Get in Touch</a>
+                </div>
+
+                <!-- Mobile Menu Button -->
+                <button id="menu-toggle" class="md:hidden text-slate-300 hover:text-emerald-400">
+                    <i class="fas fa-bars text-xl"></i>
+                </button>
+            </div>
+
+            <!-- Mobile Menu -->
+            <div id="mobile-menu" class="hidden md:hidden mt-4 pb-2">
+                <div class="flex flex-col space-y-4">
+                    <a href="#about" class="mobile-nav-link">About</a>
+                    <a href="#skills" class="mobile-nav-link">Skills</a>
+                    <a href="#projects" class="mobile-nav-link">Projects</a>
+                    <a href="#experience" class="mobile-nav-link">Experience</a>
+                    <a href="#education" class="mobile-nav-link">Education</a>
+                    <a href="#contact" class="mobile-nav-link">Contact</a>
+                </div>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section id="hero" class="min-h-screen flex items-center pt-16">
+        <div class="container mx-auto px-4 py-12">
+            <div class="max-w-4xl mx-auto">
+                <!-- Intro Badge -->
+                <div
+                    class="inline-flex items-center px-3 py-1 rounded-full bg-slate-800 border border-emerald-500/30 mb-6">
+                    <div class="w-2 h-2 bg-emerald-500 rounded-full mr-2 animate-pulse"></div>
+                    <span class="text-sm font-fira-code">Junior Java Backend Engineer</span>
+                </div>
+
+                <!-- Main Heading -->
+                <h1 class="text-4xl md:text-6xl font-bold mb-4">
+
+                    <span class="text-emerald-400 font-fira-code">Khairul Basar</span>
+
+                    <!-- <span class="block">Building Scalable</span>
+                    <span class="text-emerald-400 font-fira-code">Backend Systems</span> -->
+                </h1>
+
+                <!-- Subheading -->
+                <p class="text-xl text-slate-300 mb-8 max-w-2xl">
+                    I specialize in creating robust, efficient backend solutions using Java, Spring Boot, and modern
+                    cloud technologies.
+                    Passionate about solving complex problems through clean, maintainable code.
+                </p>
+
+
+
+
+
+                <!-- CTA Buttons -->
+                <div class="flex flex-wrap gap-4 mb-12">
+                    <a href="#projects" class="btn-primary">
+                        <i class="fas fa-code-branch mr-2"></i>View My Projects
+                    </a>
+                    <a href="#contact" class="btn-secondary">
+                        <i class="fas fa-envelope mr-2"></i>Contact Me
+                    </a>
+                    <a href="https://drive.google.com/file/d/10Fc_-gAYbM0H5PIYwOLruSXwoSDlufm3/view?usp=sharing"
+                        class="btn-outline">
+                        <i class="fas fa-file-pdf mr-2"></i>Download Resume
+                    </a>
+                </div>
+
+                <!-- Social Links -->
+                <div class="flex space-x-6">
+                    <a href="https://github.com/KhairulBasharbd" target="_blank" class="social-icon"
+                        aria-label="GitHub">
+                        <i class="fab fa-github"></i>
+                    </a>
+                    <a href="https:www.linkedin.com/in/khairul-basar-bd" target="_blank" class="social-icon"
+                        aria-label="LinkedIn">
+                        <i class="fab fa-linkedin-in"></i>
+                    </a>
+                    <a href="https://stackoverflow.com/users/edit/17472314" target="_blank" class="social-icon"
+                        aria-label="Stack Overflow">
+                        <i class="fab fa-stack-overflow"></i>
+                    </a>
+                    <a href="https://medium.com/@khairulrucse26" target="_blank" class="social-icon"
+                        aria-label="Medium">
+                        <i class="fab fa-medium"></i>
+                    </a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- About Section -->
+    <section id="about" class="py-20 bg-slate-800/30">
+        <div class="container mx-auto px-4">
+            <div class="max-w-4xl mx-auto">
+                <!-- Section Header -->
+                <div class="text-center mb-12">
+                    <h2 class="section-heading">About Me</h2>
+                    <div class="section-underline"></div>
+                </div>
+
+
+                <div class="grid md:grid-cols-3 gap-8 items-center">
+                    <!-- Profile Image Placeholder -->
+                    <div class="md:col-span-1 flex justify-center">
+                        <div class="relative">
+                            <div
+                                class="w-64 h-64 rounded-full bg-gradient-to-br from-slate-700 to-slate-900 border-4 border-emerald-500/30 flex items-center justify-center">
+                                <!-- <i class="fas fa-user-secret text-6xl text-emerald-400"></i> -->
+
+                                <img src="assets/images/profile.jpg" alt="Profile Picture"
+                                    class="w-60 h-60 rounded-full object-cover">
+
+                            </div>
+                            <div
+                                class="absolute -bottom-2 -right-2 w-12 h-12 bg-slate-900 rounded-full border-4 border-slate-900 flex items-center justify-center">
+                                <i class="fab fa-java text-2xl text-emerald-400"></i>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- About Content -->
+                    <div class="md:col-span-2">
+                        <h3 class="text-2xl font-bold mb-4 font-fira-code">Backend-First Mindset</h3>
+                        <p class="text-slate-300 mb-4">
+                            As a Junior Java Backend Engineer, I focus on building efficient, scalable server-side
+                            applications.
+                            My approach combines solid object-oriented principles with modern Spring ecosystem tools to
+                            create
+                            maintainable and performant systems.
+                        </p>
+                        <p class="text-slate-300 mb-6">
+                            I enjoy the challenge of optimizing database queries, designing RESTful APIs, and
+                            implementing
+                            secure authentication systems. While I have frontend skills, my passion lies in the
+                            backend—where
+                            business logic meets system architecture.
+                        </p>
+
+                        <!-- Key Focus Areas -->
+                        <div class="grid grid-cols-2 gap-4 mt-6">
+
+                            <div class="flex items-start">
+                                <i class="fas fa-server text-emerald-400 mt-1 mr-3"></i>
+                                <div>
+                                    <h4 class="font-semibold">API Development</h4>
+                                    <p class="text-sm text-slate-400">RESTful services with Spring Boot</p>
+                                </div>
+                            </div>
+                            <div class="flex items-start">
+                                <i class="fas fa-database text-emerald-400 mt-1 mr-3"></i>
+                                <div>
+                                    <h4 class="font-semibold">Data Persistence</h4>
+                                    <p class="text-sm text-slate-400">SQL & NoSQL database design</p>
+                                </div>
+                            </div>
+
+
+
+                            <div class="flex items-start">
+                                <i class="fas fa-shield-alt text-emerald-400 mt-1 mr-3"></i>
+                                <div>
+                                    <h4 class="font-semibold">Auth & Security</h4>
+                                    <p class="text-sm text-slate-400">OAuth2, JWT, and Spring Security</p>
+                                </div>
+                            </div>
+
+                            <div class="flex items-start">
+                                <i class="fas fa-exchange-alt text-emerald-400 mt-1 mr-3"></i>
+                                <div>
+                                    <h4 class="font-semibold">Event-Driven Design</h4>
+                                    <p class="text-sm text-slate-400">Asynchronous messaging with Kafka/RabbitMQ</p>
+                                </div>
+                            </div>
+
+                            <div class="flex items-start">
+                                <i class="fas fa-cubes text-emerald-400 mt-1 mr-3"></i>
+                                <div>
+                                    <h4 class="font-semibold">Microservices</h4>
+                                    <p class="text-sm text-slate-400">Distributed systems with Spring Cloud</p>
+                                </div>
+                            </div>
+
+                            <div class="flex items-start">
+                                <i class="fas fa-cloud text-emerald-400 mt-1 mr-3"></i>
+                                <div>
+                                    <h4 class="font-semibold">Cloud Native</h4>
+                                    <p class="text-sm text-slate-400">AWS deployment & Docker containerization</p>
+                                </div>
+                            </div>
+
+                            <div class="flex items-start">
+                                <i class="fas fa-tachometer-alt text-emerald-400 mt-1 mr-3"></i>
+                                <div>
+                                    <h4 class="font-semibold">Performance Tuning</h4>
+                                    <p class="text-sm text-slate-400">JVM optimization and Redis caching</p>
+                                </div>
+                            </div>
+
+                            <div class="flex items-start">
+                                <i class="fas fa-vial text-emerald-400 mt-1 mr-3"></i>
+                                <div>
+                                    <h4 class="font-semibold">Quality Assurance</h4>
+                                    <p class="text-sm text-slate-400">TDD with JUnit, Mockito, and AssertJ</p>
+                                </div>
+                            </div>
+
+
+
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Skills Section -->
+    <section id="skills" class="py-20">
+        <div class="container mx-auto px-4">
+            <!-- Section Header -->
+            <div class="text-center mb-12">
+                <h2 class="section-heading">Technical Skills</h2>
+                <div class="section-underline"></div>
+                <p class="text-slate-400 max-w-2xl mx-auto mt-4">
+                    A categorized overview of my technical toolkit, with emphasis on backend development
+                </p>
+            </div>
+
+            <!-- Skills Grid -->
+            <div class="grid md:grid-cols-2 lg:grid-cols-4 gap-6 max-w-6xl mx-auto">
+                <!-- Backend Skills -->
+                <div class="skill-card">
+                    <div class="skill-icon bg-emerald-500/20 flex items-center gap-3 p-3 rounded-lg">
+                        <i class="fas fa-server text-emerald-400"></i>
+                        <h3 class="skill-category">Backend</h3>
+                    </div>
+
+                    <ul class="space-y-2 mt-4">
+                        <li class="skill-item">Java 8+</li>
+                        <li class="skill-item">Spring Boot</li>
+                        <li class="skill-item">Spring MVC</li>
+                        <li class="skill-item">Spring Security</li>
+                        <li class="skill-item">REST APIs</li>
+                        <li class="skill-item">Microservices</li>
+                    </ul>
+                </div>
+
+                <!--  Database Skills -->
+                <div class="skill-card">
+                    <div class="skill-header flex items-center gap-3 bg-blue-500/20 p-3 rounded-lg">
+                        <i class="fas fa-database text-blue-400"></i>
+                        <h3 class="skill-category">Databases</h3>
+                    </div>
+                    <ul class="space-y-2 mt-4">
+                        <li class="skill-item">PostgreSQL</li>
+                        <li class="skill-item">MySQL</li>
+                        <li class="skill-item">MongoDB</li>
+                        <li class="skill-item">Redis</li>
+                        <li class="skill-item">JPA / Hibernate</li>
+                        <li class="skill-item">SQL Optimization</li>
+                    </ul>
+                </div>
+
+                <!-- Frontend Skills -->
+                <div class="skill-card">
+                    <div class="skill-header flex items-center gap-3 bg-purple-500/20 p-3 rounded-lg">
+                        <i class="fas fa-code text-purple-400"></i>
+                        <h3 class="skill-category">Frontend</h3>
+                    </div>
+                    <ul class="space-y-2 mt-4">
+                        <li class="skill-item">HTML5</li>
+                        <li class="skill-item">CSS3 / Bootstrap / Tailwind</li>
+                        <li class="skill-item">Thymeleaf</li>
+                        <li class="skill-item">JavaScript (ES6+)</li>
+                        <li class="skill-item">Responsive Design</li>
+                        <li class="skill-item">API Integration</li>
+                    </ul>
+                </div>
+
+                <!-- Tools & DevOps -->
+                <div class="skill-card">
+                    <div class="skill-header flex items-center gap-3 bg-amber-500/20 p-3 rounded-lg">
+                        <i class="fas fa-tools text-amber-400"></i>
+                        <h3 class="skill-category">Tools & DevOps</h3>
+                    </div>
+                    <ul class="space-y-2 mt-4">
+                        <li class="skill-item">Git & GitHub</li>
+                        <li class="skill-item">Docker</li>
+                        <li class="skill-item">Maven / Gradle</li>
+                        <li class="skill-item">Postman</li>
+                        <li class="skill-item">Linux / Bash</li>
+                        <li class="skill-item">AWS Basics</li>
+                    </ul>
+                </div>
+                <!-- Architecture Skills -->
+                <div class="skill-card">
+                    <div class="skill-header flex items-center gap-3 bg-rose-500/20 p-3 rounded-lg">
+                        <i class="fas fa-layer-group text-rose-400"></i>
+                        <h3 class="skill-category">Architecture</h3>
+                    </div>
+                    <ul class="space-y-2 mt-4">
+                        <li class="skill-item">Microservices Architecture</li>
+                        <li class="skill-item">Design Patterns (SOLID)</li>
+                        <li class="skill-item">Event-Driven Architecture</li>
+                        <!-- <li class="skill-item">Caching Strategies</li> -->
+                        <li class="skill-item">System Design</li>
+                        <!-- <li class="skill-item">Message Queues (Kafka/RabbitMQ)</li> -->
+                    </ul>
+                </div>
+                <!-- Testing & QA Skills -->
+                <div class="skill-card">
+                    <div class="skill-header flex items-center gap-3 bg-cyan-500/20 p-3 rounded-lg">
+                        <i class="fas fa-check-double text-cyan-400"></i>
+                        <h3 class="skill-category">Testing & QA</h3>
+                    </div>
+                    <ul class="space-y-2 mt-4">
+                        <li class="skill-item">Unit Testing (JUnit 5)</li>
+                        <li class="skill-item">Mocking (Mockito)</li>
+                        <li class="skill-item">Integration Testing</li>
+                        <!-- <li class="skill-item">TDD (Test Driven Development)</li> -->
+                        <li class="skill-item">Code Quality (Sonarqube)</li>
+                        <li class="skill-item">Performance Profiling</li>
+                    </ul>
+                </div>
+                <!-- Cloud Services Skills -->
+                <div class="skill-card">
+                    <div class="skill-header flex items-center gap-3 bg-orange-500/20 p-3 rounded-lg">
+                        <i class="fas fa-cloud text-orange-400"></i>
+                        <h3 class="skill-category">Cloud Services</h3>
+                    </div>
+                    <ul class="space-y-2 mt-4">
+                        <li class="skill-item">AWS (EC2, S3, RDS)</li>
+                        <!-- <li class="skill-item">CI/CD Pipelines (Jenkins/Github Actions)</li>
+                        <li class="skill-item">Kubernetes Basics</li> -->
+                        <li class="skill-item">Logging (ELK Stack)</li>
+                        <li class="skill-item">Monitoring (Prometheus/Grafana)</li>
+                        <li class="skill-item">Serverless (AWS Lambda)</li>
+                    </ul>
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+    <!-- Projects Section -->
+    <section id="projects" class="py-20 bg-slate-800/30">
+        <div class="container mx-auto px-4">
+            <!-- Section Header -->
+            <div class="text-center mb-12">
+                <h2 class="section-heading">Backend Projects</h2>
+                <div class="section-underline"></div>
+                <p class="text-slate-400 max-w-2xl mx-auto mt-4">
+                    Practical applications showcasing my backend development skills and problem-solving approach
+                </p>
+            </div>
+
+            <!-- Projects Grid -->
+            <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-8 max-w-6xl mx-auto">
+                <!-- Project 1 -->
+                <div
+                    class="project-card group p-6 bg-slate-800/50 rounded-xl border border-slate-700 hover:border-emerald-500/50 transition-all duration-300 shadow-xl">
+
+                    <div
+                        class="inline-block px-3 py-1 mb-4 text-[10px] font-bold uppercase tracking-wider text-emerald-400 bg-emerald-500/10 border border-emerald-500/20 rounded-full">
+                        <i class="fas fa-leaf mr-1"></i> Spring Boot
+                    </div>
+
+                    <h3 class="text-2xl font-bold text-white mb-3 group-hover:text-emerald-400 transition-colors">
+                        E-Commerce API
+                    </h3>
+
+                    <p class="text-slate-400 leading-relaxed mb-6">
+                        A complete <span class="text-slate-200">RESTful API</span> for an e-commerce platform featuring
+                        a robust product catalog, secure authentication, and complex order workflows.
+                    </p>
+
+                    <div class="mb-4">
+                        <h4 class="text-sm font-semibold text-slate-300 mb-2">Key Features:</h4>
+                        <ul class="text-sm text-slate-400 space-y-1">
+                            <li class="flex items-start">
+                                <span class="text-emerald-500 mr-2">•</span>
+                                <span>JWT-based authentication & authorization</span>
+                            </li>
+                            <li class="flex items-start">
+                                <span class="text-emerald-500 mr-2">•</span>
+                                <span>Product search with filtering and pagination</span>
+                            </li>
+                            <li class="flex items-start">
+                                <span class="text-emerald-500 mr-2">•</span>
+                                <span>Payment gateway integration (Stripe)</span>
+                            </li>
+                        </ul>
+                    </div>
+
+                    <div class="flex flex-wrap gap-2 mb-6">
+                        <span
+                            class="px-2 py-1 bg-slate-900 text-slate-300 text-xs font-medium rounded border border-slate-700">Java</span>
+                        <span
+                            class="px-2 py-1 bg-slate-900 text-slate-300 text-xs font-medium rounded border border-slate-700">PostgreSQL</span>
+                    </div>
+
+                    <div class="flex justify-between items-center pt-4 border-t border-slate-700/50">
+                        <a href="#"
+                            class="flex items-center text-sm font-medium text-emerald-400 hover:text-emerald-300 transition-colors">
+                            <i class="fab fa-github mr-2 text-lg"></i>View Code
+                        </a>
+                        <div
+                            class="flex items-center text-[11px] font-semibold text-slate-500 uppercase tracking-widest">
+                            <span class="w-2 h-2 bg-emerald-500 rounded-full animate-pulse mr-2"></span>
+                            Backend Only
+                        </div>
+                    </div>
+                </div>
+
+
+                <!-- Previous style of project -->
+                <!-- <div class="project-card group">
+
+                    <div class="project-badge">Spring Boot</div>
+                    <h3 class="project-title">E-Commerce API</h3>
+                    <p class="project-description">
+                        A complete RESTful API for an e-commerce platform with product catalog, user authentication,
+                        shopping cart, and order processing.
+                    </p>
+                    <div class="mb-4">
+                        <h4 class="text-sm font-semibold text-slate-300 mb-2">Key Features:</h4>
+                        <ul class="text-sm text-slate-400 space-y-1">
+                            <li>• JWT-based authentication & authorization</li>
+                            <li>• Product search with filtering and pagination</li>
+                            <li>• Payment gateway integration (Stripe)</li>
+                            <li>• Order tracking system</li>
+                        </ul>
+                    </div>
+                    <div class="project-tech">
+
+                        <div class="flex flex-wrap gap-2 mb-4">
+                            <span class="px-2 py-1 bg-slate-700 text-xs rounded">Java</span>
+                            <span class="px-2 py-1 bg-slate-700 text-xs rounded">Spring Boot</span>
+                            <span class="px-2 py-1 bg-slate-700 text-xs rounded">PostgreSQL</span>
+
+                        </div>
+
+                    </div>
+                    <div class="flex justify-between items-center mt-6">
+                        <a href="#" class="project-link">
+                            <i class="fab fa-github mr-2"></i>View Code
+                        </a>
+                        <div class="text-xs text-slate-500">
+                            <i class="fas fa-code mr-1"></i>Backend Only
+                        </div>
+
+                    </div>
+                </div> -->
+
+
+                <!-- Project 2 -->
+
+
+                <!-- Project 3 -->
+
+            </div>
+
+            <!-- More Projects Button -->
+            <div class="text-center mt-12">
+                <a href="https://github.com/KhairulBasharbd" target="_blank" class="btn-outline">
+                    <i class="fab fa-github mr-2"></i>View All Projects on GitHub
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Experience Section -->
+    <section id="experience" class="py-20 ">
+        <div class="container mx-auto px-4">
+            <!-- Section Header -->
+            <div class="text-center mb-12">
+                <h2 class="section-heading">Experience & Training</h2>
+                <div class="section-underline"></div>
+            </div>
+            <!-- Experience Timeline -->
+            <div class="relative max-w-4xl mx-auto">
+
+                <div class="absolute left-0 md:left-1/2 transform md:-translate-x-1/2 h-full w-1 bg-blue-200"></div>
+
+                <div class="relative mb-12 flex flex-col md:flex-row items-center">
+                    <div
+                        class="absolute left-0 md:left-1/2 transform -translate-x-1/2 w-6 h-6 bg-blue-600 border-4 border-white rounded-full z-10">
+                    </div>
+
+                    <div class="md:w-1/2 md:pr-12 md:text-right w-full pl-10 md:pl-0">
+                        <span
+                            class="inline-block px-4 py-1 mb-2 text-sm font-semibold text-blue-600 bg-blue-100 rounded-full">2023
+                            - Present</span>
+                    </div>
+
+                    <div class="md:w-1/2 md:pl-12 w-full pl-10 md:pl-0 mt-4 md:mt-0">
+                        <div
+                            class="bg-white p-6 rounded-xl shadow-md border border-gray-100 hover:shadow-lg transition-shadow duration-300">
+                            <h3 class="text-xl font-bold text-gray-800">Junior Backend Developer</h3>
+                            <h4 class="text-blue-600 font-medium mb-4">Tech Solutions Inc.</h4>
+                            <ul class="space-y-2 text-gray-600 text-sm">
+                                <li class="flex items-start"><span class="text-blue-500 mr-2">▹</span> Developed and
+                                    maintained RESTful APIs using Spring Boot</li>
+                                <li class="flex items-start"><span class="text-blue-500 mr-2">▹</span> Optimized
+                                    database queries improving response times by 30%</li>
+                                <li class="flex items-start"><span class="text-blue-500 mr-2">▹</span> Implemented
+                                    JWT-based authentication for secure access</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="relative mb-12 flex flex-col md:flex-row-reverse items-center">
+                    <div
+                        class="absolute left-0 md:left-1/2 transform -translate-x-1/2 w-6 h-6 bg-blue-600 border-4 border-white rounded-full z-10">
+                    </div>
+
+                    <div class="md:w-1/2 md:pl-12 w-full pl-10 md:pl-0">
+                        <span
+                            class="inline-block px-4 py-1 mb-2 text-sm font-semibold text-blue-600 bg-blue-100 rounded-full">2022
+                            - 2023</span>
+                    </div>
+
+                    <div class="md:w-1/2 md:pr-12 w-full pl-10 md:pl-0 mt-4 md:mt-0">
+                        <div
+                            class="bg-white p-6 rounded-xl shadow-md border border-gray-100 hover:shadow-lg transition-shadow duration-300">
+                            <h3 class="text-xl font-bold text-gray-800">Backend Development Intern</h3>
+                            <h4 class="text-blue-600 font-medium mb-4">Software House Ltd.</h4>
+                            <ul class="space-y-2 text-gray-600 text-sm">
+                                <li class="flex items-start"><span class="text-blue-500 mr-2">▹</span> Assisted in
+                                    development of e-commerce microservices</li>
+                                <li class="flex items-start"><span class="text-blue-500 mr-2">▹</span> Wrote unit tests
+                                    achieving 85% code coverage</li>
+                                <li class="flex items-start"><span class="text-blue-500 mr-2">▹</span> Documented API
+                                    endpoints using Swagger/OpenAPI</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="relative mb-12 flex flex-col md:flex-row items-center">
+                    <div
+                        class="absolute left-0 md:left-1/2 transform -translate-x-1/2 w-6 h-6 bg-blue-600 border-4 border-white rounded-full z-10">
+                    </div>
+
+                    <div class="md:w-1/2 md:pr-12 md:text-right w-full pl-10 md:pl-0">
+                        <span
+                            class="inline-block px-4 py-1 mb-2 text-sm font-semibold text-blue-600 bg-blue-100 rounded-full">2021
+                            - 2022</span>
+                    </div>
+
+                    <div class="md:w-1/2 md:pl-12 w-full pl-10 md:pl-0 mt-4 md:mt-0">
+                        <div
+                            class="bg-white p-6 rounded-xl shadow-md border border-gray-100 hover:shadow-lg transition-shadow duration-300">
+                            <h3 class="text-xl font-bold text-gray-800">Java Bootcamp Graduate</h3>
+                            <h4 class="text-blue-600 font-medium mb-4">Code Academy</h4>
+                            <ul class="space-y-2 text-gray-600 text-sm">
+                                <li class="flex items-start"><span class="text-blue-500 mr-2">▹</span> Completed
+                                    intensive 6-month backend program</li>
+                                <li class="flex items-start"><span class="text-blue-500 mr-2">▹</span> Built multiple
+                                    REST APIs and database applications</li>
+                                <li class="flex items-start"><span class="text-blue-500 mr-2">▹</span> Learned software
+                                    design patterns and Git workflow</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+
+
+    <!-- Education Section -->
+    <section id="education" class="py-20 bg-slate-800/30">
+        <div class="container mx-auto px-6">
+            <!-- Section Header -->
+            <div class="text-center mb-12">
+                <h2 class="section-heading">Education</h2>
+                <div class="section-underline"></div>
+            </div>
+
+            <div class="max-w-5xl mx-auto grid md:grid-cols-2 gap-10">
+                <!-- Education Card 1 -->
+                <div
+                    class="group relative p-8 rounded-3xl bg-slate-800/40 border border-slate-700/50 hover:border-blue-500/50 transition-all duration-300 hover:shadow-[0_0_30px_-10px_rgba(59,130,246,0.3)] backdrop-blur-sm">
+                    <div
+                        class="inline-flex items-center justify-center w-14 h-14 rounded-2xl bg-blue-500/10 text-blue-400 mb-6 group-hover:scale-110 group-hover:bg-blue-500 group-hover:text-white transition-all duration-300">
+                        <i class="fas fa-graduation-cap text-2xl"></i>
+                    </div>
+
+                    <div class="flex flex-col h-full">
+                        <span class="text-sm font-bold tracking-widest text-blue-400 uppercase mb-2">Degree</span>
+                        <h3 class="text-2xl font-bold mb-1 text-white">Bachelor of Computer Science</h3>
+                        <h4 class="text-lg font-medium text-slate-400 mb-4 flex items-center">
+                            <i class="fas fa-university mr-2 text-sm"></i> State University
+                        </h4>
+
+                        <div
+                            class="inline-block px-3 py-1 rounded-full bg-slate-700/50 text-slate-300 text-sm font-semibold w-fit mb-6">
+                            2019 — 2023
+                        </div>
+
+                        <p class="text-slate-400 leading-relaxed mb-8">
+                            Focus on software engineering, algorithms, data structures, and database systems.
+                            <span
+                                class="text-emerald-400 font-medium italic block mt-2 underline decoration-emerald-500/30">Graduated
+                                with honors.</span>
+                        </p>
+
+                        <div class="mt-auto flex flex-wrap gap-2">
+                            <span
+                                class="px-3 py-1 text-xs font-bold rounded-lg bg-slate-900 text-slate-300 border border-slate-700">Data
+                                Structures</span>
+                            <span
+                                class="px-3 py-1 text-xs font-bold rounded-lg bg-slate-900 text-slate-300 border border-slate-700">Database
+                                Design</span>
+                            <span
+                                class="px-3 py-1 text-xs font-bold rounded-lg bg-slate-900 text-slate-300 border border-slate-700">Software
+                                Engineering</span>
+                        </div>
+                    </div>
+                </div>
+                <!-- Education Card 2 -->
+                <div
+                    class="group relative p-8 rounded-3xl bg-slate-800/40 border border-slate-700/50 hover:border-emerald-500/50 transition-all duration-300 hover:shadow-[0_0_30px_-10px_rgba(16,185,129,0.3)] backdrop-blur-sm">
+                    <div
+                        class="inline-flex items-center justify-center w-14 h-14 rounded-2xl bg-emerald-500/10 text-emerald-400 mb-6 group-hover:scale-110 group-hover:bg-emerald-500 group-hover:text-white transition-all duration-300">
+                        <i class="fas fa-certificate text-2xl"></i>
+                    </div>
+
+                    <div class="flex flex-col h-full">
+                        <span
+                            class="text-sm font-bold tracking-widest text-emerald-400 uppercase mb-2">Professional</span>
+                        <h3 class="text-2xl font-bold mb-1 text-white">Certifications</h3>
+                        <h4 class="text-lg font-medium text-slate-400 mb-4 flex items-center">
+                            <i class="fas fa-award mr-2 text-sm"></i> Various Platforms
+                        </h4>
+
+                        <div
+                            class="inline-block px-3 py-1 rounded-full bg-slate-700/50 text-slate-300 text-sm font-semibold w-fit mb-6">
+                            2022 — 2023
+                        </div>
+
+                        <p class="text-slate-400 leading-relaxed mb-8">
+                            Continuous learning through online platforms and professional industry-standard
+                            certifications.
+                        </p>
+
+                        <div class="mt-auto flex flex-wrap gap-2">
+                            <span
+                                class="px-3 py-1 text-xs font-bold rounded-lg bg-slate-900 text-slate-300 border border-slate-700">Data
+                                Structures</span>
+                            <span
+                                class="px-3 py-1 text-xs font-bold rounded-lg bg-slate-900 text-slate-300 border border-slate-700">Database
+                                Design</span>
+                            <span
+                                class="px-3 py-1 text-xs font-bold rounded-lg bg-slate-900 text-slate-300 border border-slate-700">Software
+                                Engineering</span>
+                        </div>
+
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Achievements & Activities -->
+    <section id="achievements" class="py-20">
+        <div class="container mx-auto px-4">
+            <!-- Section Header -->
+            <div class="text-center mb-12">
+                <h2 class="section-heading">Achievements & Activities</h2>
+                <div class="section-underline"></div>
+            </div>
+
+            <div class="max-w-6xl mx-auto grid md:grid-cols-3 gap-8">
+                <!-- Achievement 1 -->
+                <div
+                    class="group bg-white p-8 rounded-2xl shadow-sm border border-gray-100 hover:shadow-xl hover:-translate-y-2 transition-all duration-300 ease-in-out achievement-card">
+                    <div
+                        class="w-16 h-16 bg-gradient-to-br from-blue-500 to-blue-700 text-white rounded-xl flex items-center justify-center mb-6 shadow-lg group-hover:scale-110 transition-transform duration-300 achievement-icon">
+                        <i class="fas fa-trophy text-2xl"></i>
+                    </div>
+                    <h3 class="text-xl font-bold text-gray-800 mb-3 achievement-title">Hackathon Winner</h3>
+                    <p class="text-gray-600 leading-relaxed achievement-description">
+                        Won <strong>2nd place</strong> in University Hackathon 2022 for a Spring Boot-based inventory
+                        management system.
+                    </p>
+                </div>
+                <!-- Achievement 2 -->
+
+                <div
+                    class="group bg-white p-8 rounded-2xl shadow-sm border border-gray-100 hover:shadow-xl hover:-translate-y-2 transition-all duration-300 ease-in-out achievement-card">
+                    <div
+                        class="w-16 h-16 bg-gradient-to-br from-purple-500 to-purple-700 text-white rounded-xl flex items-center justify-center mb-6 shadow-lg group-hover:scale-110 transition-transform duration-300 achievement-icon">
+                        <i class="fas fa-users text-2xl"></i>
+                    </div>
+                    <h3 class="text-xl font-bold text-gray-800 mb-3 achievement-title">Tech Community</h3>
+                    <p class="text-gray-600 leading-relaxed achievement-description">
+                        Active member of local Java developers community. Regularly contribute by attending meetups and
+                        workshops.
+                    </p>
+                </div>
+                <!-- Achievement 3 -->
+
+                <div
+                    class="group bg-white p-8 rounded-2xl shadow-sm border border-gray-100 hover:shadow-xl hover:-translate-y-2 transition-all duration-300 ease-in-out achievement-card">
+                    <div
+                        class="w-16 h-16 bg-gradient-to-br from-emerald-500 to-emerald-700 text-white rounded-xl flex items-center justify-center mb-6 shadow-lg group-hover:scale-110 transition-transform duration-300 achievement-icon">
+                        <i class="fas fa-book text-2xl"></i>
+                    </div>
+                    <h3 class="text-xl font-bold text-gray-800 mb-3 achievement-title">Technical Writing</h3>
+                    <p class="text-gray-600 leading-relaxed achievement-description">
+                        Author of technical articles on backend development topics, sharing insights on modern
+                        programming blogs.
+                    </p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Blog/Articles Section -->
+    <section id="blog" class="py-20 bg-slate-800/30">
+        <div class="container mx-auto px-4">
+            <!-- Section Header -->
+            <div class="text-center mb-12">
+                <h2 class="section-heading">Technical Articles</h2>
+                <div class="section-underline"></div>
+                <p class="text-slate-400 max-w-2xl mx-auto mt-4">
+                    Thoughts and tutorials on backend development, Java, and system design
+                </p>
+            </div>
+
+            <div class="max-w-6xl mx-auto grid md:grid-cols-2 lg:grid-cols-3 gap-10">
+                <!-- Article 1 -->
+
+                <div
+                    class="group relative bg-slate-800/40 border border-slate-700/50 rounded-2xl overflow-hidden transition-all duration-300 hover:-translate-y-2 hover:shadow-2xl hover:shadow-emerald-500/10 hover:border-emerald-500/30">
+                    <div class="relative h-48 overflow-hidden">
+                        <div class="absolute inset-0 bg-gradient-to-br from-emerald-600/20 to-slate-900 z-10"></div>
+                        <div
+                            class="w-full h-full bg-slate-800 flex items-center justify-center group-hover:scale-110 transition-transform duration-500">
+                            <i
+                                class="fas fa-lock text-6xl text-emerald-400 drop-shadow-[0_0_15px_rgba(52,211,153,0.3)]"></i>
+                        </div>
+                        <span
+                            class="absolute top-4 left-4 z-20 bg-emerald-500/10 text-emerald-400 text-xs font-bold px-3 py-1 rounded-full border border-emerald-500/20 backdrop-blur-md">
+                            Spring Security
+                        </span>
+                    </div>
+
+                    <div class="p-8">
+                        <div class="flex items-center text-slate-500 text-xs mb-4">
+                            <i class="far fa-calendar-alt mr-2"></i>
+                            <span>March 15, 2023</span>
+                        </div>
+                        <h3 class="text-xl font-bold text-white mb-3 group-hover:text-emerald-400 transition-colors">
+                            Implementing JWT Authentication
+                        </h3>
+                        <p class="text-slate-400 leading-relaxed mb-6 text-sm">
+                            A deep dive into stateless security: Learn to configure filters, entry points, and token
+                            validation in modern Spring Boot apps.
+                        </p>
+                        <a href="#"
+                            class="inline-flex items-center text-emerald-400 font-semibold text-sm hover:text-emerald-300 transition-colors">
+                            Read Full Guide <i
+                                class="fas fa-arrow-right ml-2 group-hover:translate-x-2 transition-transform"></i>
+                        </a>
+                    </div>
+                </div>
+                <!-- Article 2 -->
+
+                <div
+                    class="group relative bg-slate-800/40 border border-slate-700/50 rounded-2xl overflow-hidden transition-all duration-300 hover:-translate-y-2 hover:shadow-2xl hover:shadow-blue-500/10 hover:border-blue-500/30">
+                    <div class="relative h-48 overflow-hidden">
+                        <div class="absolute inset-0 bg-gradient-to-br from-blue-600/20 to-slate-900 z-10"></div>
+                        <div
+                            class="w-full h-full bg-slate-800 flex items-center justify-center group-hover:scale-110 transition-transform duration-500">
+                            <i
+                                class="fas fa-database text-6xl text-blue-400 drop-shadow-[0_0_15px_rgba(96,165,250,0.3)]"></i>
+                        </div>
+                        <span
+                            class="absolute top-4 left-4 z-20 bg-blue-500/10 text-blue-400 text-xs font-bold px-3 py-1 rounded-full border border-blue-500/20 backdrop-blur-md">
+                            Database
+                        </span>
+                    </div>
+
+                    <div class="p-8">
+                        <div class="flex items-center text-slate-500 text-xs mb-4">
+                            <i class="far fa-calendar-alt mr-2"></i>
+                            <span>Feb 28, 2023</span>
+                        </div>
+                        <h3 class="text-xl font-bold text-white mb-3 group-hover:text-blue-400 transition-colors">
+                            Optimizing SQL Performance
+                        </h3>
+                        <p class="text-slate-400 leading-relaxed mb-6 text-sm">
+                            Stop the slow queries. Techniques for indexing, query execution plans, and reducing N+1
+                            problems in JPA/Hibernate.
+                        </p>
+                        <a href="#"
+                            class="inline-flex items-center text-blue-400 font-semibold text-sm hover:text-blue-300 transition-colors">
+                            Read Full Guide <i
+                                class="fas fa-arrow-right ml-2 group-hover:translate-x-2 transition-transform"></i>
+                        </a>
+                    </div>
+                </div>
+                <!-- Article 3 -->
+
+                <div
+                    class="group relative bg-slate-800/40 border border-slate-700/50 rounded-2xl overflow-hidden transition-all duration-300 hover:-translate-y-2 hover:shadow-2xl hover:shadow-purple-500/10 hover:border-purple-500/30">
+                    <div class="relative h-48 overflow-hidden">
+                        <div class="absolute inset-0 bg-gradient-to-br from-purple-600/20 to-slate-900 z-10"></div>
+                        <div
+                            class="w-full h-full bg-slate-800 flex items-center justify-center group-hover:scale-110 transition-transform duration-500">
+                            <i
+                                class="fas fa-project-diagram text-6xl text-purple-400 drop-shadow-[0_0_15px_rgba(192,132,252,0.3)]"></i>
+                        </div>
+                        <span
+                            class="absolute top-4 left-4 z-20 bg-purple-500/10 text-purple-400 text-xs font-bold px-3 py-1 rounded-full border border-purple-500/20 backdrop-blur-md">
+                            Architecture
+                        </span>
+                    </div>
+
+                    <div class="p-8">
+                        <div class="flex items-center text-slate-500 text-xs mb-4">
+                            <i class="far fa-calendar-alt mr-2"></i>
+                            <span>Jan 12, 2023</span>
+                        </div>
+                        <h3 class="text-xl font-bold text-white mb-3 group-hover:text-purple-400 transition-colors">
+                            Monolith to Microservices
+                        </h3>
+                        <p class="text-slate-400 leading-relaxed mb-6 text-sm">
+                            A strategic roadmap for decomposition. Understanding bounded contexts, API Gateways, and
+                            eventual consistency.
+                        </p>
+                        <a href="#"
+                            class="inline-flex items-center text-purple-400 font-semibold text-sm hover:text-purple-300 transition-colors">
+                            Read Full Guide <i
+                                class="fas fa-arrow-right ml-2 group-hover:translate-x-2 transition-transform"></i>
+                        </a>
+                    </div>
+                </div>
+            </div>
+
+            <div class="text-center mt-16">
+                <a href="#"
+                    class="inline-flex items-center px-8 py-3 bg-transparent border border-slate-700 text-white font-semibold rounded-full hover:bg-slate-800 hover:border-slate-500 transition-all duration-300 shadow-lg">
+                    <i class="fas fa-newspaper mr-3 text-emerald-400"></i>Explore All Articles
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section id="contact" class="py-20">
+        <div class="absolute top-1/4 -right-20 w-96 h-96 bg-emerald-500/10 rounded-full blur-3xl -z-10"></div>
+        <div class="absolute bottom-1/4 -left-20 w-96 h-96 bg-blue-500/10 rounded-full blur-3xl -z-10"></div>
+
+        <div class="container mx-auto px-4">
+            <!-- Section Header -->
+            <div class="text-center mb-12">
+                <h2 class="section-heading">Get In Touch</h2>
+                <div class="section-underline"></div>
+                <p class="text-slate-400 max-w-2xl mx-auto mt-4">
+                    Interested in collaborating or discussing backend development opportunities? Feel free to reach out.
+                </p>
+            </div>
+
+            <div class="max-w-6xl mx-auto grid md:grid-cols-2 gap-16">
+                <!-- Contact Info -->
+                <div class="space-y-8">
+                    <h3 class="text-2xl font-bold mb-8 font-mono flex items-center">
+                        <span class="text-emerald-400 mr-2 text-3xl">/</span> Contact Information
+                    </h3>
+
+                    <div class="space-y-6">
+                        <a href="mailto:hello@example.com"
+                            class="group flex items-center p-4 rounded-xl border border-slate-700/50 bg-slate-800/30 hover:bg-slate-800/80 hover:border-emerald-500/50 transition-all duration-300 transform hover:-translate-y-1">
+                            <div
+                                class="w-12 h-12 flex items-center justify-center rounded-lg bg-slate-700 group-hover:bg-emerald-500/20 text-emerald-400 transition-colors">
+                                <i class="fas fa-envelope text-xl"></i>
+                            </div>
+                            <div class="ml-4">
+                                <h4 class="text-sm font-medium text-slate-400 uppercase tracking-wider">Email</h4>
+                                <p class="text-lg font-semibold group-hover:text-emerald-400 transition-colors">
+                                    hello@example.com</p>
+                            </div>
+                        </a>
+
+                        <a href="https://github.com" target="_blank"
+                            class="group flex items-center p-4 rounded-xl border border-slate-700/50 bg-slate-800/30 hover:bg-slate-800/80 hover:border-emerald-500/50 transition-all duration-300 transform hover:-translate-y-1">
+                            <div
+                                class="w-12 h-12 flex items-center justify-center rounded-lg bg-slate-700 group-hover:bg-emerald-500/20 text-emerald-400 transition-colors">
+                                <i class="fab fa-github text-xl"></i>
+                            </div>
+                            <div class="ml-4">
+                                <h4 class="text-sm font-medium text-slate-400 uppercase tracking-wider">GitHub</h4>
+                                <p class="text-lg font-semibold group-hover:text-emerald-400 transition-colors">
+                                    github.com/yourusername</p>
+                            </div>
+                        </a>
+
+                        <a href="https://linkedin.com" target="_blank"
+                            class="group flex items-center p-4 rounded-xl border border-slate-700/50 bg-slate-800/30 hover:bg-slate-800/80 hover:border-emerald-500/50 transition-all duration-300 transform hover:-translate-y-1">
+                            <div
+                                class="w-12 h-12 flex items-center justify-center rounded-lg bg-slate-700 group-hover:bg-emerald-500/20 text-emerald-400 transition-colors">
+                                <i class="fab fa-linkedin text-xl"></i>
+                            </div>
+                            <div class="ml-4">
+                                <h4 class="text-sm font-medium text-slate-400 uppercase tracking-wider">LinkedIn</h4>
+                                <p class="text-lg font-semibold group-hover:text-emerald-400 transition-colors">
+                                    linkedin.com/in/yourprofile</p>
+                            </div>
+                        </a>
+                    </div>
+
+                    <div class="relative group mt-10">
+                        <div
+                            class="absolute -inset-0.5 bg-gradient-to-r from-emerald-500 to-cyan-500 rounded-2xl blur opacity-20 group-hover:opacity-40 transition duration-1000">
+                        </div>
+                        <div class="relative bg-slate-900 rounded-2xl p-6 border border-slate-700">
+                            <h4
+                                class="font-bold mb-3 flex items-center text-emerald-400 uppercase text-xs tracking-[0.2em]">
+                                <span class="relative flex h-3 w-3 mr-3">
+                                    <span
+                                        class="animate-ping absolute inline-flex h-full w-full rounded-full bg-emerald-400 opacity-75"></span>
+                                    <span class="relative inline-flex rounded-full h-3 w-3 bg-emerald-500"></span>
+                                </span>
+                                Availability
+                            </h4>
+                            <p class="text-slate-300">
+                                Currently open to new opportunities, freelance projects, and technical discussions.
+                            </p>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Contact Form -->
+                <div class="bg-slate-800/40 backdrop-blur-sm p-8 rounded-3xl border border-slate-700/50 shadow-2xl">
+                    <h3 class="text-2xl font-bold mb-8 font-mono tracking-tight">Send a Message</h3>
+
+                    <form id="contact-form" class="space-y-5">
+                        <div class="grid grid-cols-1 md:grid-cols-2 gap-5">
+                            <div class="space-y-2">
+                                <label for="name" class="block text-sm font-medium text-slate-400 ml-1">Full
+                                    Name</label>
+                                <input type="text" id="name" required
+                                    class="w-full bg-slate-900/50 border border-slate-700 rounded-xl px-4 py-3 outline-none focus:border-emerald-500 focus:ring-1 focus:ring-emerald-500 transition-all placeholder:text-slate-600"
+                                    placeholder="John Doe">
+                            </div>
+                            <div class="space-y-2">
+                                <label for="email" class="block text-sm font-medium text-slate-400 ml-1">Email
+                                    Address</label>
+                                <input type="email" id="email" required
+                                    class="w-full bg-slate-900/50 border border-slate-700 rounded-xl px-4 py-3 outline-none focus:border-emerald-500 focus:ring-1 focus:ring-emerald-500 transition-all placeholder:text-slate-600"
+                                    placeholder="john@example.com">
+                            </div>
+                        </div>
+
+                        <div class="space-y-2">
+                            <label for="subject" class="block text-sm font-medium text-slate-400 ml-1">Subject</label>
+                            <input type="text" id="subject" required
+                                class="w-full bg-slate-900/50 border border-slate-700 rounded-xl px-4 py-3 outline-none focus:border-emerald-500 focus:ring-1 focus:ring-emerald-500 transition-all placeholder:text-slate-600"
+                                placeholder="Project Inquiry">
+                        </div>
+
+                        <div class="space-y-2">
+                            <label for="message" class="block text-sm font-medium text-slate-400 ml-1">Message</label>
+                            <textarea id="message" rows="4" required
+                                class="w-full bg-slate-900/50 border border-slate-700 rounded-xl px-4 py-3 outline-none focus:border-emerald-500 focus:ring-1 focus:ring-emerald-500 transition-all placeholder:text-slate-600 resize-none"
+                                placeholder="Tell me about your project..."></textarea>
+                        </div>
+
+                        <button type="submit"
+                            class="w-full bg-gradient-to-r from-emerald-500 to-cyan-500 hover:from-emerald-600 hover:to-cyan-600 text-slate-900 font-bold py-4 rounded-xl transition-all duration-300 transform hover:scale-[1.02] active:scale-95 flex items-center justify-center shadow-lg shadow-emerald-500/20">
+                            <i class="fas fa-paper-plane mr-2"></i> Send Message
+                        </button>
+                    </form>
+
+                    <div id="form-success"
+                        class="hidden mt-6 p-4 bg-emerald-500/10 border border-emerald-500/50 rounded-xl text-emerald-400 text-sm flex items-center">
+                        <i class="fas fa-check-circle mr-3 text-lg"></i>
+                        <p>Success! Your message has been sent. I'll get back to you shortly.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="bg-slate-900 border-t border-slate-800 pt-12 pb-8">
+        <div class="container mx-auto px-4">
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-8 items-center pb-8">
+
+                <div class="text-center md:text-left">
+                    <p class="text-white font-semibold text-lg">Java Backend Engineer</p>
+                    <div class="flex items-center justify-center md:justify-start mt-2">
+                        <span class="relative flex h-2 w-2 mr-2">
+                            <span
+                                class="animate-ping absolute inline-flex h-full w-full rounded-full bg-green-400 opacity-75"></span>
+                            <span class="relative inline-flex rounded-full h-2 w-2 bg-green-500"></span>
+                        </span>
+                        <p class="text-xs text-slate-400 uppercase tracking-widest">Available for hire</p>
+                    </div>
+                </div>
+
+                <div class="flex justify-center space-x-6 text-slate-400">
+                    <a href="#" class="hover:text-blue-400 transition-colors"><i class="fab fa-linkedin fa-xl"></i></a>
+                    <a href="#" class="hover:text-white transition-colors"><i class="fab fa-github fa-xl"></i></a>
+                    <a href="#" class="hover:text-orange-400 transition-colors"><i
+                            class="fab fa-stack-overflow fa-xl"></i></a>
+                </div>
+
+                <div class="flex justify-center md:justify-end">
+                    <button id="back-to-top"
+                        class="p-3 bg-slate-800 hover:bg-slate-700 text-white rounded-full transition-all shadow-lg border border-slate-700">
+                        <i class="fas fa-arrow-up"></i>
+                    </button>
+                </div>
+            </div>
+
+            <div
+                class="border-t border-slate-800 pt-8 flex flex-col md:flex-row justify-between items-center text-sm text-slate-500">
+                <p>&copy; <span id="current-year">2025</span> Built with <i class="fas fa-heart text-red-500 mx-1"></i>
+                    using HTML, Tailwind CSS, and Vanilla
+                    JavaScript</p>
+                <div class="flex space-x-6 mt-4 md:mt-0">
+                    <a href="#hero" class="hover:text-slate-300">Home</a>
+                    <a href="#projects" class="hover:text-slate-300">Projects</a>
+                    <a href="#contact" class="hover:text-slate-300">Contact</a>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <!-- JavaScript Files -->
+    <script src="js/main.js"></script>
+</body>
+
+</html>

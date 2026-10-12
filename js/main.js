@@ -1,196 +1,315 @@
 /**
- * Portfolio JavaScript
- * Minimal, clean JavaScript for portfolio functionality
+ * Khairul Basar - Portfolio Main JavaScript
+ * High-performance, clean vanilla JS for motion, mobile drawer, and interactions
  */
 
-// DOM Ready Function
-document.addEventListener('DOMContentLoaded', function() {
-    // Initialize all functionality
-    initMobileMenu();
-    initSmoothScroll();
-    initFormSubmission();
-    initBackToTop();
-    initCurrentYear();
-    initScrollAnimations();
+document.addEventListener('DOMContentLoaded', () => {
+  initMobileDrawer();
+  initSmoothScroll();
+  initCopyEmail();
+  initProjectFilter();
+  initContactForm();
+  initBackToTop();
+  initActiveNavSpy();
+  initCurrentYear();
+  initScrollAnimations();
+  initCardSpotlight();
 });
 
 /**
- * Mobile Menu Toggle
+ * Mobile Navigation Drawer & Morphing Hamburger
  */
-function initMobileMenu() {
-    const menuToggle = document.getElementById('menu-toggle');
-    const mobileMenu = document.getElementById('mobile-menu');
-    
-    if (menuToggle && mobileMenu) {
-        menuToggle.addEventListener('click', function() {
-            mobileMenu.classList.toggle('hidden');
-            
-            // Change icon based on menu state
-            const icon = menuToggle.querySelector('i');
-            if (mobileMenu.classList.contains('hidden')) {
-                icon.classList.remove('fa-times');
-                icon.classList.add('fa-bars');
-            } else {
-                icon.classList.remove('fa-bars');
-                icon.classList.add('fa-times');
-            }
-        });
-        
-        // Close menu when clicking on a link
-        const mobileLinks = mobileMenu.querySelectorAll('a');
-        mobileLinks.forEach(link => {
-            link.addEventListener('click', () => {
-                mobileMenu.classList.add('hidden');
-                menuToggle.querySelector('i').classList.remove('fa-times');
-                menuToggle.querySelector('i').classList.add('fa-bars');
-            });
-        });
+function initMobileDrawer() {
+  const menuToggle = document.getElementById('menu-toggle');
+  const mobileDrawer = document.getElementById('mobile-drawer');
+  const closeDrawerBtn = document.getElementById('close-drawer-btn');
+
+  if (!menuToggle || !mobileDrawer) return;
+
+  function openMenu() {
+    mobileDrawer.classList.add('open');
+    menuToggle.classList.add('menu-open');
+    menuToggle.setAttribute('aria-expanded', 'true');
+    document.body.style.overflow = 'hidden'; // Lock background scroll
+  }
+
+  function closeMenu() {
+    mobileDrawer.classList.remove('open');
+    menuToggle.classList.remove('menu-open');
+    menuToggle.setAttribute('aria-expanded', 'false');
+    document.body.style.overflow = '';
+  }
+
+  menuToggle.addEventListener('click', (e) => {
+    e.stopPropagation();
+    if (mobileDrawer.classList.contains('open')) {
+      closeMenu();
+    } else {
+      openMenu();
     }
+  });
+
+  if (closeDrawerBtn) {
+    closeDrawerBtn.addEventListener('click', closeMenu);
+  }
+
+  // Close when clicking any nav link inside drawer
+  mobileDrawer.querySelectorAll('a').forEach(link => {
+    link.addEventListener('click', closeMenu);
+  });
+
+  // Close when tapping outside drawer
+  document.addEventListener('click', (e) => {
+    if (mobileDrawer.classList.contains('open') && !mobileDrawer.contains(e.target) && !menuToggle.contains(e.target)) {
+      closeMenu();
+    }
+  });
+
+  // Close on Escape key
+  document.addEventListener('keydown', (e) => {
+    if (e.key === 'Escape' && mobileDrawer.classList.contains('open')) {
+      closeMenu();
+    }
+  });
 }
 
 /**
- * Smooth Scroll for Navigation Links
+ * Smooth Scroll for Navigation Anchors with Header Offset
  */
 function initSmoothScroll() {
-    // Select all links with hashes
-    document.querySelectorAll('a[href^="#"]').forEach(anchor => {
-        anchor.addEventListener('click', function(e) {
-            const href = this.getAttribute('href');
-            
-            // Skip if it's just "#" or external link
-            if (href === '#' || href.includes('http')) return;
-            
-            e.preventDefault();
-            
-            const targetId = href.substring(1);
-            const targetElement = document.getElementById(targetId);
-            
-            if (targetElement) {
-                // Calculate position (accounting for fixed header)
-                const headerHeight = document.querySelector('nav').offsetHeight;
-                const targetPosition = targetElement.offsetTop - headerHeight;
-                
-                // Smooth scroll to target
-                window.scrollTo({
-                    top: targetPosition,
-                    behavior: 'smooth'
-                });
-            }
+  document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+    anchor.addEventListener('click', function(e) {
+      const targetId = this.getAttribute('href');
+      if (!targetId || targetId === '#' || targetId.length <= 1) return;
+
+      const targetElement = document.querySelector(targetId);
+      if (targetElement) {
+        e.preventDefault();
+        const headerHeight = document.querySelector('nav')?.offsetHeight || 75;
+        const targetPosition = targetElement.getBoundingClientRect().top + window.pageYOffset - headerHeight;
+
+        window.scrollTo({
+          top: targetPosition,
+          behavior: 'smooth'
         });
+      }
     });
+  });
 }
 
 /**
- * Contact Form Submission
+ * Copy Email to Clipboard with Toast Notification
  */
-function initFormSubmission() {
-    const contactForm = document.getElementById('contact-form');
-    const formSuccess = document.getElementById('form-success');
-    
-    if (contactForm && formSuccess) {
-        contactForm.addEventListener('submit', function(e) {
-            e.preventDefault();
-            
-            // Get form data
-            const formData = new FormData(contactForm);
-            const formValues = Object.fromEntries(formData.entries());
-            
-            // In a real implementation, you would send this data to a server
-            // For demo purposes, we'll just show a success message
-            
-            // Show success message
-            formSuccess.classList.remove('hidden');
-            formSuccess.classList.add('fade-in-up');
-            
-            // Reset form
-            contactForm.reset();
-            
-            // Hide success message after 5 seconds
-            setTimeout(() => {
-                formSuccess.classList.add('hidden');
-                formSuccess.classList.remove('fade-in-up');
-            }, 5000);
-            
-            // Log form data (for demo)
-            console.log('Form submitted with data:', formValues);
-        });
+function initCopyEmail() {
+  const copyButtons = document.querySelectorAll('[data-copy-email]');
+  const toast = document.getElementById('toast-notification');
+  const toastMessage = document.getElementById('toast-message');
+  const emailToCopy = 'khairulbasar.dev@gmail.com';
+  let toastTimeout = null;
+
+  function showToast(message) {
+    if (!toast) return;
+    if (toastMessage) toastMessage.textContent = message;
+    toast.classList.add('show');
+
+    if (toastTimeout) clearTimeout(toastTimeout);
+    toastTimeout = setTimeout(() => {
+      toast.classList.remove('show');
+    }, 3500);
+  }
+
+  copyButtons.forEach(btn => {
+    btn.addEventListener('click', (e) => {
+      e.preventDefault();
+      if (navigator.clipboard && navigator.clipboard.writeText) {
+        navigator.clipboard.writeText(emailToCopy)
+          .then(() => showToast(`Copied ${emailToCopy} to clipboard!`))
+          .catch(() => fallbackCopy(emailToCopy));
+      } else {
+        fallbackCopy(emailToCopy);
+      }
+    });
+  });
+
+  function fallbackCopy(text) {
+    const textarea = document.createElement('textarea');
+    textarea.value = text;
+    textarea.style.position = 'fixed';
+    textarea.style.opacity = '0';
+    document.body.appendChild(textarea);
+    textarea.select();
+    try {
+      document.execCommand('copy');
+      showToast(`Copied ${text} to clipboard!`);
+    } catch (err) {
+      prompt('Copy email manually:', text);
     }
+    document.body.removeChild(textarea);
+  }
 }
 
 /**
- * Back to Top Button
+ * Project Category Filter Tabs with Smooth Animation
+ */
+function initProjectFilter() {
+  const filterBtns = document.querySelectorAll('[data-filter]');
+  const projectCards = document.querySelectorAll('.project-card[data-category]');
+
+  if (!filterBtns.length || !projectCards.length) return;
+
+  filterBtns.forEach(btn => {
+    btn.addEventListener('click', function() {
+      const selectedCategory = this.getAttribute('data-filter');
+
+      // Update button styling
+      filterBtns.forEach(b => {
+        b.classList.remove('bg-emerald-500/20', 'text-emerald-400', 'border-emerald-500/50');
+        b.classList.add('bg-slate-800/60', 'text-slate-400', 'border-slate-700/60');
+      });
+      this.classList.remove('bg-slate-800/60', 'text-slate-400', 'border-slate-700/60');
+      this.classList.add('bg-emerald-500/20', 'text-emerald-400', 'border-emerald-500/50');
+
+      // Filter cards
+      projectCards.forEach(card => {
+        const cardCategories = card.getAttribute('data-category')?.split(' ') || [];
+        if (selectedCategory === 'all' || cardCategories.includes(selectedCategory)) {
+          card.style.display = 'flex';
+          card.classList.remove('fade-in-up');
+          void card.offsetWidth; // Trigger reflow
+          card.classList.add('fade-in-up');
+        } else {
+          card.style.display = 'none';
+        }
+      });
+    });
+  });
+}
+
+/**
+ * Contact Form Handler (Direct mailto + UI confirmation)
+ */
+function initContactForm() {
+  const form = document.getElementById('contact-form');
+  const formSuccess = document.getElementById('form-success');
+
+  if (form) {
+    form.addEventListener('submit', (e) => {
+      e.preventDefault();
+
+      const name = document.getElementById('name')?.value || '';
+      const email = document.getElementById('email')?.value || '';
+      const subject = document.getElementById('subject')?.value || 'Engineering Inquiry';
+      const message = document.getElementById('message')?.value || '';
+
+      const mailtoLink = `mailto:khairulbasar.dev@gmail.com?subject=${encodeURIComponent(`[Portfolio] ${subject} - from ${name}`)}&body=${encodeURIComponent(`From: ${name} (${email})\n\nMessage:\n${message}`)}`;
+
+      if (formSuccess) {
+        formSuccess.classList.remove('hidden');
+        formSuccess.classList.add('fade-in-up');
+      }
+
+      form.reset();
+
+      setTimeout(() => {
+        window.location.href = mailtoLink;
+      }, 600);
+    });
+  }
+}
+
+/**
+ * Back to Top Floating Button
  */
 function initBackToTop() {
-    const backToTopBtn = document.getElementById('back-to-top');
-    
-    if (backToTopBtn) {
-        // Show/hide button based on scroll position
-        window.addEventListener('scroll', function() {
-            if (window.scrollY > 500) {
-                backToTopBtn.classList.remove('opacity-0', 'invisible');
-                backToTopBtn.classList.add('opacity-100', 'visible');
-            } else {
-                backToTopBtn.classList.remove('opacity-100', 'visible');
-                backToTopBtn.classList.add('opacity-0', 'invisible');
-            }
-        });
-        
-        // Scroll to top when clicked
-        backToTopBtn.addEventListener('click', function() {
-            window.scrollTo({
-                top: 0,
-                behavior: 'smooth'
-            });
-        });
+  const backToTopBtn = document.getElementById('back-to-top');
+  if (!backToTopBtn) return;
+
+  window.addEventListener('scroll', () => {
+    if (window.scrollY > 400) {
+      backToTopBtn.classList.add('visible');
+    } else {
+      backToTopBtn.classList.remove('visible');
     }
+  });
+
+  backToTopBtn.addEventListener('click', () => {
+    window.scrollTo({
+      top: 0,
+      behavior: 'smooth'
+    });
+  });
 }
 
 /**
- * Set Current Year in Footer
+ * Active Navigation Link Highlighting on Scroll
+ */
+function initActiveNavSpy() {
+  const sections = document.querySelectorAll('section[id]');
+  const navLinks = document.querySelectorAll('.nav-link');
+
+  if (!sections.length || !navLinks.length) return;
+
+  const observer = new IntersectionObserver((entries) => {
+    entries.forEach(entry => {
+      if (entry.isIntersecting) {
+        const id = entry.target.getAttribute('id');
+        navLinks.forEach(link => {
+          if (link.getAttribute('href') === `#${id}`) {
+            link.classList.add('active');
+          } else {
+            link.classList.remove('active');
+          }
+        });
+      }
+    });
+  }, { threshold: 0.25 });
+
+  sections.forEach(sec => observer.observe(sec));
+}
+
+/**
+ * Set Dynamic Current Year
  */
 function initCurrentYear() {
-    const yearElement = document.getElementById('current-year');
-    if (yearElement) {
-        yearElement.textContent = new Date().getFullYear();
-    }
+  const yearEl = document.getElementById('current-year');
+  if (yearEl) {
+    yearEl.textContent = new Date().getFullYear();
+  }
 }
 
 /**
- * Scroll Animations for Elements
+ * Scroll Triggered Animations for Cards
  */
 function initScrollAnimations() {
-    // Create an Intersection Observer
-    const observerOptions = {
-        root: null,
-        rootMargin: '0px',
-        threshold: 0.1
-    };
-    
-    const observer = new IntersectionObserver((entries) => {
-        entries.forEach(entry => {
-            if (entry.isIntersecting) {
-                entry.target.classList.add('fade-in-up');
-                observer.unobserve(entry.target);
-            }
-        });
-    }, observerOptions);
-    
-    // Observe elements to animate
-    const elementsToAnimate = document.querySelectorAll('.skill-card, .project-card, .experience-item, .education-card, .achievement-card, .article-card');
-    
-    elementsToAnimate.forEach(element => {
-        observer.observe(element);
+  const elements = document.querySelectorAll('.metric-card, .project-card, .glass-panel, .terminal-window');
+  if (!('IntersectionObserver' in window)) return;
+
+  const observer = new IntersectionObserver((entries) => {
+    entries.forEach(entry => {
+      if (entry.isIntersecting) {
+        entry.target.classList.add('fade-in-up');
+        observer.unobserve(entry.target);
+      }
     });
+  }, { threshold: 0.1 });
+
+  elements.forEach(el => observer.observe(el));
 }
 
 /**
- * Utility function to copy email to clipboard
+ * Interactive Mouse Spotlight Effect on Cards
  */
-function copyEmailToClipboard() {
-    const email = 'hello@example.com';
-    
-    navigator.clipboard.writeText(email).then(() => {
-        // Show a temporary notification
-        alert('Email copied to clipboard: ' + email);
+function initCardSpotlight() {
+  const cards = document.querySelectorAll('.glass-panel, .project-card, .metric-card');
+  if (!cards.length) return;
+
+  cards.forEach(card => {
+    card.addEventListener('mousemove', (e) => {
+      const rect = card.getBoundingClientRect();
+      const x = e.clientX - rect.left;
+      const y = e.clientY - rect.top;
+      card.style.setProperty('--mouse-x', `${x}px`);
+      card.style.setProperty('--mouse-y', `${y}px`);
     });
+  });
 }

@@ -631,11 +631,11 @@ html, body {
   left: 0;
   right: 0;
   bottom: 0;
-  background: rgba(9, 13, 22, 0.95);
+  background: rgba(9, 13, 22, 0.96);
   backdrop-filter: blur(16px);
   -webkit-backdrop-filter: blur(16px);
   z-index: 99;
-  display: flex;
+  display: none !important;
   flex-direction: column;
   padding: 5rem 2rem 2rem;
   transform: translateY(-100%);
@@ -645,6 +645,7 @@ html, body {
 }
 
 .mobile-nav-drawer.open {
+  display: flex !important;
   transform: translateY(0);
   opacity: 1;
   pointer-events: auto;
